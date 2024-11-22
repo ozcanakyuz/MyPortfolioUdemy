@@ -7,7 +7,7 @@ namespace MyPortfolioUdemy.DAL.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=localhost;initial Catalog=MyPortfolioDb;integrated Security=true;");
+            optionsBuilder.UseSqlServer("Server=localhost;initial Catalog=MyPortfolioDb;Integrated Security=true;TrustServerCertificate=True;");
         }
         public DbSet<About> Abouts { get; set; }
         public DbSet<Contact> Contacts { get; set; }
