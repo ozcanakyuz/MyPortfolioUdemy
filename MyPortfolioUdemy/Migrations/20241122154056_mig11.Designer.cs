@@ -11,7 +11,7 @@ using MyPortfolioUdemy.DAL.Context;
 
 namespace MyPortfolioUdemy.Migrations
 {
-    [DbContext(typeof(MyPortfolio))]
+    [DbContext(typeof(MyPortfolioContext))]
     [Migration("20241122154056_mig11")]
     partial class mig11
     {

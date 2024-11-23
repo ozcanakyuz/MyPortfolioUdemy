@@ -1,0 +1,53 @@
+﻿@model List<MyPortfolioUdemy.DAL.Entities.Experience>
+
+    <div class="row about-content about-content--timeline">
+
+        <div class="col-full text-center">
+            <h3>My Work Experience.</h3>
+        </div>
+
+    <div class="col-six tab-full left">
+        <div class="timeline">
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                if (i < 2) // İlk 2 bilgi solda
+                {
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <p class="timeline__timeframe">@Model[i].Date</p>
+                            <h3>@Model[i].Head</h3>
+                            <h5>@Model[i].Title</h5>
+                        </div>
+                        <div class="timeline__desc">
+                            <p>@Model[i].Description</p>
+                        </div>
+                    </div>
+                }
+            }
+        </div> <!-- end timeline -->
+    </div> <!-- end left -->
+
+    <div class="col-six tab-full right">
+        <div class="timeline">
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                if (i >= 2 && i < 4) // Sonraki 2 bilgi sağda
+                {
+                    <div class="timeline__block">
+                        <div class="timeline__bullet"></div>
+                        <div class="timeline__header">
+                            <p class="timeline__timeframe">@Model[i].Date</p>
+                            <h3>@Model[i].Head</h3>
+                            <h5>@Model[i].Title</h5>
+                        </div>
+                        <div class="timeline__desc">
+                            <p>@Model[i].Description</p>
+                        </div>
+                    </div>
+                }
+            }
+        </div> <!-- end timeline -->
+    </div> <!-- end right -->
+
+    </div> <!-- end about-content timeline -->

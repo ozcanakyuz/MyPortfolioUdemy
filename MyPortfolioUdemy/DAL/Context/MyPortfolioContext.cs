@@ -3,7 +3,7 @@ using MyPortfolioUdemy.DAL.Entities;
 
 namespace MyPortfolioUdemy.DAL.Context
 {
-    public class MyPortfolio : DbContext
+    public class MyPortfolioContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
