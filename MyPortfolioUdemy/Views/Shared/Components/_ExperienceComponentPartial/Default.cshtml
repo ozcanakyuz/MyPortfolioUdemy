@@ -8,6 +8,7 @@
 
     <div class="col-six tab-full left">
         <div class="timeline">
+
             @for (int i = 0; i < Model.Count; i++)
             {
                 if (i < 2) // İlk 2 bilgi solda
@@ -30,6 +31,7 @@
 
     <div class="col-six tab-full right">
         <div class="timeline">
+
             @for (int i = 0; i < Model.Count; i++)
             {
                 if (i >= 2 && i < 4) // Sonraki 2 bilgi sağda

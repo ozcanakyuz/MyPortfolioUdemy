@@ -2,7 +2,7 @@
 
 namespace MyPortfolioUdemy.Controllers
 {
-    public class DefaultController1 : Controller
+    public class LayoutController : Controller
     {
         public IActionResult Index()
         {
