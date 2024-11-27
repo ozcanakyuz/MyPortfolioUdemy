@@ -3,7 +3,7 @@
     ViewData["Title"] = "ExperienceList";
     Layout = "~/Views/Layout/Index.cshtml";
 }
-<div class="main-panel">
+
 	<div class="content">
 		<div class="container-fluid">
 			<h4 class="page-title">Dashboard</h4>
@@ -15,12 +15,12 @@
 						</div>
 						<div class="card-body">
 							<div class="card-sub">
-								This is the basic table view of the ready dashboard :
+								This is the basic table view of the ready dashboard
 							</div>
 							<table class="table mt-3">
 								<thead>
 									<tr>
-										<th scope="col">Id</th>
+										<th scope="col">#</th>
 										<th scope="col">Head</th>
 										<th scope="col">Title</th>
 										<th scope="col">Date</th>
@@ -29,56 +29,24 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>1</td>
-										<td>Mark</td>
-										<td>Otto</td>
-										<td>mdo</td>
-									</tr>
-									<tr>
-										<td>2</td>
-										<td>Jacob</td>
-										<td>Thornton</td>
-										<td>fat</td>
-									</tr>
-									<tr>
-										<td>3</td>
-										<td colspan="2">Larry the Bird</td>
-										<td>twitter</td>
-									</tr>
+									@foreach(var item in Model)
+									{
+										<tr>
+											<td>@item.ExperienceId</td>
+											<td>@item.Head</td>
+											<td>@item.Title</td>
+											<td>@item.Date</td>
+											<td><a href="/Experience/UpdateExperience/@item.ExperienceId" class="btn btn-success">Update</a></td>
+											<td><a href="/Experience/DeleteExperience/@item.ExperienceId" class="btn btn-danger">Delete</a></td>
+										</tr>
+									}
 								</tbody>
 							</table>
+							<a href="/Experience/CreateExperience/" class="btn btn-primary">Add New Experience</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<footer class="footer">
-		<div class="container-fluid">
-			<nav class="pull-left">
-				<ul class="nav">
-					<li class="nav-item">
-						<a class="nav-link" href="http://www.themekita.com">
-							ThemeKita
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">
-							Help
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="https://themewagon.com/license/#free-item">
-							Licenses
-						</a>
-					</li>
-				</ul>
-			</nav>
-			<div class="copyright ml-auto">
-				2018, made with <i class="la la-heart heart text-danger"></i> by <a href="http://www.themekita.com">ThemeKita</a>
-			</div>
-		</div>
-	</footer>
-</div>
 
