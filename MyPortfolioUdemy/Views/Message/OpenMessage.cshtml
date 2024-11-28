@@ -1,0 +1,57 @@
+﻿@model Message
+
+@{
+    ViewData["Title"] = "OpenMessage";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Messages</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">Messages</div>
+					</div>
+					<div class="card-body">
+						<div class="card-sub">
+							This is the message detail.
+						</div>
+						<table class="table mt-3">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<td>@Model.MessageId</td>
+								</tr>
+								<tr>
+									<th scope="col">Sender</th>
+									<td>@Model.NameSurname</td>
+								</tr>
+								<tr>
+									<th scope="col">Subject</th>
+									<td>@Model.Subject</td>
+								</tr>
+								<tr>
+									<th scope="col">Send Date</th>
+									<td>@Model.SendDate.ToShortDateString()</td>
+								</tr>
+								<tr class="border-bottom">
+									<th scope="col">Message Detail</th>
+									<td>@Model.MessageDetail</td>
+								</tr>
+								<tr>
+									<td><a href="/Message/Inbox/" class="btn btn-primary">Go Back</a></td>
+								</tr>
+							</thead>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+

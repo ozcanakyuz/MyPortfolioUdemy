@@ -38,7 +38,7 @@
 										<td>@item.NameSurname</td>
 										<td>@item.Subject</td>
 										<td>@item.SendDate.ToShortDateString()</td>
-										<td><a href="/Message/UpdateMessage/@item.MessageId" class="btn btn-warning">Open Message</a></td>
+										<td><a href="/Message/OpenMessage/@item.MessageId" class="btn btn-warning">Open Message</a></td>
 										@if(item.IsRead == true) {
 											<td><a href="/Message/ChangeIsReadToFalse/@item.MessageId" class="btn btn-info"><i class="la la-check"></i></a></td>
 										} else {

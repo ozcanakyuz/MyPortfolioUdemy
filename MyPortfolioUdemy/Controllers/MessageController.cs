@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyPortfolioUdemy.DAL.Context;
+using MyPortfolioUdemy.DAL.Entities;
+
 
 namespace MyPortfolioUdemy.Controllers
 {
@@ -26,5 +28,47 @@ namespace MyPortfolioUdemy.Controllers
             context.SaveChanges();
             return RedirectToAction("Inbox");
         }
+
+        public IActionResult DeleteMessage(int id)
+        {
+            var value = context.Messages.Find(id);
+            context.Messages.Remove(value);
+            context.SaveChanges();
+            return RedirectToAction("Inbox");
+        }
+
+        [HttpGet]
+        public IActionResult UpdateMessage(int id)
+        {
+            var value = context.Messages.Find(id);
+            return View(value);
+        }
+        [HttpPost]
+        public IActionResult UpdateMessage(Message message)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(message);
+            }
+
+            context.Messages.Update(message);
+            context.SaveChanges();
+
+            return RedirectToAction("Inbox");
+        }
+
+        public IActionResult OpenMessage(int id)
+        {
+            var value = context.Messages.Find(id);
+            if (value == null)
+            {
+                return NotFound(); // Hata sayfası
+            }
+
+            return View(value);
+        }
+
+
     }
 }
+

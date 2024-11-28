@@ -1,0 +1,45 @@
+﻿@model Message
+
+@{
+    ViewData["Title"] = "UpdateMessage";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Message</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">Message Update Page</div>
+					</div>
+					<div class="card-body">
+						<form method="post">
+							<input type="hidden" asp-for="MessageId" />
+							<label>Message</label>
+							<input type="text" asp-for="NameSurname" class="form-control" />
+							<br />
+							<label>Subject</label>
+							<input type="text" asp-for="Subject" class="form-control" />
+							<br />
+							<label>E-Mail</label>
+							<input type="text" asp-for="Email" class="form-control" />
+							<br />
+							<label>Date Info</label>
+							<input type="text" asp-for="SendDate" class="form-control" />
+							<br />
+							<label>Detail</label>
+							<textarea rows="4" class="form-control" asp-for="MessageDetail"></textarea>
+							<br />
+							<button class="btn btn-info">Update Message</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
