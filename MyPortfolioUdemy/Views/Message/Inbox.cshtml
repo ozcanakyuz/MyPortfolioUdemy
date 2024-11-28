@@ -1,0 +1,60 @@
+﻿@model List<Message>
+@{
+    ViewData["Title"] = "Inbox";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Messages</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">Messages</div>
+					</div>
+					<div class="card-body">
+						<div class="card-sub">
+							This is the basic table view of the ready messages
+						</div>
+						<table class="table mt-3">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Sender</th>
+									<th scope="col">Subject</th>
+									<th scope="col">Send Date</th>
+									<th scope="col">Message Detail</th>
+									<th scope="col">Is Read?</th>
+									<th scope="col">Delete</th>
+									<th scope="col">Update</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var item in Model)
+								{
+									<tr>
+										<td>@item.MessageId</td>
+										<td>@item.NameSurname</td>
+										<td>@item.Subject</td>
+										<td>@item.SendDate.ToShortDateString()</td>
+										<td><a href="/Message/UpdateMessage/@item.MessageId" class="btn btn-warning">Open Message</a></td>
+										@if(item.IsRead == true) {
+											<td><a href="/Message/ChangeIsReadToFalse/@item.MessageId" class="btn btn-info"><i class="la la-check"></i></a></td>
+										} else {
+											<td><a href="/Message/ChangeIsReadToTrue/@item.MessageId" class="btn btn-dark"><i class="la la-close"></i></a></td>
+										}
+										<td><a href="/Message/DeleteMessage/@item.MessageId" class="btn btn-danger">Delete</a></td>
+										<td><a href="/Message/UpdateMessage/@item.MessageId" class="btn btn-success">Update</a></td>
+									</tr>
+								}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
