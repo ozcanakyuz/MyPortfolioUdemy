@@ -67,8 +67,7 @@ namespace MyPortfolioUdemy.Controllers
 
             return View(value);
         }
-
-
     }
 }
+
 

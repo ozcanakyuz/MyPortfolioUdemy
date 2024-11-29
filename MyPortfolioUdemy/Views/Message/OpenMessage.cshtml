@@ -5,6 +5,7 @@
     Layout = "~/Views/Layout/Index.cshtml";
 }
 
+<input type="hidden" asp-for="MessageId" />
 
 <div class="content">
 	<div class="container-fluid">
@@ -13,13 +14,17 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
-						<div class="card-title">Messages</div>
+						<div class="card-title">Message Detail</div>
 					</div>
 					<div class="card-body">
 						<div class="card-sub">
-							This is the message detail.
+							<b>Sender:</b> @Model.NameSurname<br />
+							<b>E-Mail:</b> @Model.Email<br />
+							<b>Date:</b> @Model.SendDate<br /><br />
+							<b>Message:</b> @Model.MessageDetail<br />
+							<a href="/Message/Inbox/" class="btn btn-primary mt-4">Go Back</a>
 						</div>
-						<table class="table mt-3">
+@* 						<table class="table mt-3">
 							<thead>
 								<tr>
 									<th scope="col">#</th>
@@ -45,7 +50,7 @@
 									<td><a href="/Message/Inbox/" class="btn btn-primary">Go Back</a></td>
 								</tr>
 							</thead>
-						</table>
+						</table> *@
 					</div>
 				</div>
 			</div>
