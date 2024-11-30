@@ -31,7 +31,7 @@ To run this project locally, follow the steps below:
 4. Run the application locally using IIS Express.
 
 ## Screenshots
-![Portföy Ekran Görüntüsü](https://i.hizliresim.com/dad50bj.png)
+![Portföy Ekran Görüntüsü](https://i.hizliresim.com/b04d4b0.png)
 ![Portföy Ekran Görüntüsü](https://i.hizliresim.com/6hqeqw8.png)
 ![Portföy Ekran Görüntüsü](https://i.hizliresim.com/hekvqi2.png)
 ![Portföy Ekran Görüntüsü 1](https://i.hizliresim.com/m3pn0x7.png)
